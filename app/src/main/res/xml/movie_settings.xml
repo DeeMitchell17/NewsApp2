@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/title">
+
+    <EditTextPreference
+        android:defaultValue="@string/section"
+        android:inputType="text"
+        android:key="@string/section_name_key"
+        android:selectAllOnFocus="true"
+        android:title="@string/article_section_label" />
+
+    <ListPreference
+        android:defaultValue="@string/settings_publish_date_default"
+        android:entries="@array/settings_publish_date_labels"
+        android:entryValues="@array/settings_publish_date_values"
+        android:key="@string/article_date_key"
+        android:title="@string/settings_publish_date_label" />
+
+</PreferenceScreen>
