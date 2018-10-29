@@ -22,8 +22,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MovieActivity extends AppCompatActivity
-        implements LoaderManager.LoaderCallbacks<List<Movie>> {
+        implements SharedPreferences.OnSharedPreferenceChangeListener {
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // Set up a listener whenever a key changes
+        getPreferenceScreen().getSharedPreferences()
+                .registerOnSharedPreferenceChangeListener(this);
+    }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        // Unregister the listener whenever a key changes
+        getPreferenceScreen().getSharedPreferences()
+                .unregisterOnSharedPreferenceChangeListener(this);
+    }
+
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,String key)
+    {
+        // do stuff
+    }
     public static final String LOG_TAG = MovieActivity.class.getName();
 
     private static final String GUARDIAN_URL = "https://content.guardianapis.com/search?show-tags=contributor&q=%22netflix%20original%22&api-key=4e6e43a1-a188-4bc7-985f-c1c944a35852";
