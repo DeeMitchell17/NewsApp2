@@ -22,30 +22,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MovieActivity extends AppCompatActivity
-        implements SharedPreferences.OnSharedPreferenceChangeListener {
-    @Override
-    protected void onResume() {
-        super.onResume();
-        // Set up a listener whenever a key changes
-        getPreferenceScreen().getSharedPreferences()
-                .registerOnSharedPreferenceChangeListener(this);
-    }
+        implements LoaderManager.LoaderCallbacks<List<Movie>>, SharedPreferences.OnSharedPreferenceChangeListener {
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        // Unregister the listener whenever a key changes
-        getPreferenceScreen().getSharedPreferences()
-                .unregisterOnSharedPreferenceChangeListener(this);
-    }
-
-    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,String key)
-    {
-        // do stuff
-    }
     public static final String LOG_TAG = MovieActivity.class.getName();
 
-    private static final String GUARDIAN_URL = "https://content.guardianapis.com/search?show-tags=contributor&q=%22netflix%20original%22&api-key=4e6e43a1-a188-4bc7-985f-c1c944a35852";
+    //private static final String GUARDIAN_URL = "https://content.guardianapis.com/search?show-tags=contributor&q=%22netflix%20original%22&api-key=4e6e43a1-a188-4bc7-985f-c1c944a35852";
+    private static final String GUARDIAN_URL = "http://content.guardianapis.com/search";
 
     private static final int MOVIE_LOADER_ID = 1;
 
@@ -103,12 +85,12 @@ public class MovieActivity extends AppCompatActivity
     public Loader<List<Movie>> onCreateLoader(int i, Bundle bundle) {
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
         String articleSection = sharedPrefs.getString(
-                getString(R.string.section_name_key),
-                getString(R.string.section));
+                getString(R.string.settings_article_section_key),
+                getString(R.string.settings_article_date_default));
 
         String articleDate = sharedPrefs.getString(
-                getString(R.string.article_date_key),
-                getString(R.string.settings_publish_date_default)
+                getString(R.string.settings_article_date_key),
+                getString(R.string.settings_article_date_default)
         );
 
         Uri baseUri = Uri.parse(GUARDIAN_URL);
@@ -116,7 +98,7 @@ public class MovieActivity extends AppCompatActivity
         Uri.Builder uriBuilder = baseUri.buildUpon();
 
         uriBuilder.appendQueryParameter("show-tag", "contributor");
-        uriBuilder.appendQueryParameter("limit", "10");
+        uriBuilder.appendQueryParameter("q", "Netflix Originals");
         uriBuilder.appendQueryParameter("article section", articleSection);
         uriBuilder.appendQueryParameter("article date", articleDate);
 
@@ -157,5 +139,10 @@ public class MovieActivity extends AppCompatActivity
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+        loaderManager.initRestart(MOVIE_LOADER_ID, null, this);
     }
 }
