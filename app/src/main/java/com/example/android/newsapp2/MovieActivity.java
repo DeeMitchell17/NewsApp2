@@ -26,10 +26,13 @@ public class MovieActivity extends AppCompatActivity
 
     public static final String LOG_TAG = MovieActivity.class.getName();
 
-    //private static final String GUARDIAN_URL = "https://content.guardianapis.com/search?show-tags=contributor&q=%22netflix%20original%22&api-key=4e6e43a1-a188-4bc7-985f-c1c944a35852";
-    private static final String GUARDIAN_URL = "http://content.guardianapis.com/search";
+    private static final String GUARDIAN_URL = "https://content.guardianapis.com/search?show-tags=contributor&q=%22netflix%20original%22&api-key=4e6e43a1-a188-4bc7-985f-c1c944a35852";
 
     private static final int MOVIE_LOADER_ID = 1;
+
+    public LoaderManager loaderManager = getLoaderManager();
+
+    SharedPreferences sharedPrefs;
 
     private MovieAdapter mAdapter;
 
@@ -39,6 +42,8 @@ public class MovieActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
 
         ListView movieListView = (ListView) findViewById(R.id.list);
 
@@ -99,6 +104,7 @@ public class MovieActivity extends AppCompatActivity
 
         uriBuilder.appendQueryParameter("show-tag", "contributor");
         uriBuilder.appendQueryParameter("q", "Netflix Originals");
+        uriBuilder.appendQueryParameter("api-key", "4e6e43a1-a188-4bc7-985f-c1c944a35852");
         uriBuilder.appendQueryParameter("article section", articleSection);
         uriBuilder.appendQueryParameter("article date", articleDate);
 
@@ -142,7 +148,19 @@ public class MovieActivity extends AppCompatActivity
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        sharedPrefs.registerOnSharedPreferenceChangeListener(this);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        sharedPrefs.unregisterOnSharedPreferenceChangeListener(this);
+    }
+
+    @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        loaderManager.initRestart(MOVIE_LOADER_ID, null, this);
+        loaderManager.restartLoader(MOVIE_LOADER_ID, null, this);
     }
 }
