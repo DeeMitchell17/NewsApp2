@@ -1,18 +1,39 @@
 <resources>
     <string name="app_name">Netflix Originals 2</string>
-    <string name="title">Movie Settings</string>
     <string name="no_articles_found">No articles found.</string>
     <string name="no_internet_connection">No internet connection.</string>
     <string name="film">Film</string>
     <string name="sarah_hughes">Sarah Hughes</string>
     <string name="feb_7_2018">Feb 7, 2018</string>
     <string name="bbc_bodyguard">The BBC’s Bodyguard is becoming a ‘Netflix Original’. So who gets the credit? | Sarah Hughes</string>
-    <string name="section">section</string>
-    <string name="section_name_key">section name key</string>
-    <string name="article_section_label">Article Section</string>
-    <string name="settings_publish_date_default">publish date</string>
-    <string name="article_date_key">article date</string>
-    <string name="settings_publish_date_label">Publish Date</string>
+
+    <!-- Strings For Article Date Preference [CHAR LIMIT=30] -->
+    <string name="settings_article_date_label">Article Date</string>
+
+    <string name="settings_article_date_key" translatable="false">article_date</string>
+
+    <string name="settings_article_date_default" translatable="false">@string/settings_article_date_oldest_value</string>
+
+    <!-- Label for Article Date Oldest option [CHAR LIMIT=20] -->
+    <string name="settings_article_date_oldest_label">Oldest</string>
+
+    <string name="settings_article_date_oldest_value" translatable="false">oldest</string>
+
+    <!-- Label for Article Date Newest option [CHAR LIMIT=20] -->
+    <string name="settings_article_date_newest_label">Newest</string>
+
+    <string name="settings_article_date_newest_value" translatable="false">newest</string>
+
+    <!-- Settings Activity Title [CHAR LIMIT=NONE] -->
+    <string name="settings_title">Movie Settings</string>
+
+    <string name="settings_article_section_label">Article Section</string>
+
+    <string name="settings_article_section_key" translatable="false">article_section</string>
+
+    <string name="settings_article_section_default" translatable="false">0</string>
     <string name="settings_menu_item">Settings</string>
 
+
 </resources>
+
