@@ -1,39 +1,51 @@
 <resources>
     <string name="app_name">Netflix Originals 2</string>
+
     <string name="no_articles_found">No articles found.</string>
+
     <string name="no_internet_connection">No internet connection.</string>
+
     <string name="film">Film</string>
+
     <string name="sarah_hughes">Sarah Hughes</string>
+
     <string name="feb_7_2018">Feb 7, 2018</string>
+
     <string name="bbc_bodyguard">The BBC’s Bodyguard is becoming a ‘Netflix Original’. So who gets the credit? | Sarah Hughes</string>
 
-    <!-- Strings For Article Date Preference [CHAR LIMIT=30] -->
-    <string name="settings_article_date_label">Article Date</string>
+    <string name="settings_menu_item">Settings</string>
 
-    <string name="settings_article_date_key" translatable="false">article_date</string>
-
-    <string name="settings_article_date_default" translatable="false">@string/settings_article_date_oldest_value</string>
-
-    <!-- Label for Article Date Oldest option [CHAR LIMIT=20] -->
-    <string name="settings_article_date_oldest_label">Oldest</string>
-
-    <string name="settings_article_date_oldest_value" translatable="false">oldest</string>
-
-    <!-- Label for Article Date Newest option [CHAR LIMIT=20] -->
-    <string name="settings_article_date_newest_label">Newest</string>
-
-    <string name="settings_article_date_newest_value" translatable="false">newest</string>
-
-    <!-- Settings Activity Title [CHAR LIMIT=NONE] -->
     <string name="settings_title">Movie Settings</string>
 
-    <string name="settings_article_section_label">Article Section</string>
+    <!--Settings Page Size Title-->
 
-    <string name="settings_article_section_key" translatable="false">article_section</string>
+    <string name="settings_page_size_label">Articles (Limit 10)</string>
 
-    <string name="settings_article_section_default" translatable="false">0</string>
-    <string name="settings_menu_item">Settings</string>
+    <string name="settings_page_size_key" translatable="false">page-size</string>
+
+    <string name="settings_page_size_default" translatable="false">0</string>
+
+    <!-- Strings For Order By Preference-->
+    <string name="settings_order_by_label">Order By</string>
+
+    <string name="settings_order_by_key" translatable="false">order-by</string>
+
+    <string name="settings_order_by_default" translatable="false">@string/settings_order_by_oldest_value</string>
+
+    <!-- Label for Order-By Oldest option-->
+    <string name="settings_order_by_oldest_label">Oldest</string>
+
+    <string name="settings_order_by_oldest_value" translatable="false">oldest</string>
+
+    <!-- Label for Order-By Newest option-->
+    <string name="settings_order_by_newest_label">Newest</string>
+
+    <string name="settings_order_by_newest_value" translatable="false">newest</string>
+
+    <!-- Label for Order-By Relevance option-->
+    <string name="settings_order_by_relevance_label">Relevance</string>
+
+    <string name="settings_order_by_relevance_value" translatable="false">relevance</string>
 
 
 </resources>
-
