@@ -129,15 +129,14 @@ public final class QueryUtils {
                 String publicationDate = currentMovie.getString("webPublicationDate");
 
                 String url = currentMovie.getString("webUrl");
+                
+                String author = ""; if (currentMovie.has("tags")) {
+                    JSONArray tagsArray = currentMovie.getJSONArray("tags");
 
-                JSONArray tagsArray = currentMovie.getJSONArray("tags");
-
-
-                String author = null;
-
-                if (tagsArray.length() == 1) {
-                    JSONObject contributorTag = (JSONObject) tagsArray.get(0);
-                    author = contributorTag.getString("webTitle");
+                    if (tagsArray.length() == 1) {
+                        JSONObject contributorTag = (JSONObject) tagsArray.get(0);
+                        author = contributorTag.getString("webTitle");
+                    }
                 }
 
                 Movie movie = new Movie(section, author, title, publicationDate, url);

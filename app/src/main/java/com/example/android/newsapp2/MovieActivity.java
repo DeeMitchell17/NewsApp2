@@ -26,7 +26,7 @@ public class MovieActivity extends AppCompatActivity
 
     public static final String LOG_TAG = MovieActivity.class.getName();
 
-    private static final String GUARDIAN_URL = "https://content.guardianapis.com/search?order-by=oldest&page-size=10&q=%22netflix%20originals%22&api-key=4e6e43a1-a188-4bc7-985f-c1c944a35852";
+    private static final String GUARDIAN_URL = "https://content.guardianapis.com/search?";
 
     private static final int MOVIE_LOADER_ID = 1;
 
