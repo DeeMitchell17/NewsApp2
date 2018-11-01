@@ -19,7 +19,7 @@
 
     <!--Settings Page Size Title-->
 
-    <string name="settings_page_size_label">Articles (Limit 10)</string>
+    <string name="settings_page_size_label">Page Size</string>
 
     <string name="settings_page_size_key" translatable="false">page-size</string>
 
