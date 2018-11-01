@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="settings_publish_date_labels">
-        <item>@string/settings_publish_date_oldest_value</item>
-        <item>@string/settings_publish_date_newest_value</item>
+    <string-array name="settings_order_by_labels">
+        <item>@string/settings_order_by_oldest_label</item>
+        <item>@string/settings_order_by_newest_label</item>
+        <item>@string/settings_order_by_relevance_label</item>
     </string-array>
 
 
-    <string-array name="settings_publish_date_values">
-        <item>@string/settings_publish_date_oldest_value</item>
-        <item>@string/settings_publish_date_newest_value</item>
+    <string-array name="settings_order_by_values">
+        <item>@string/settings_order_by_oldest_value</item>
+        <item>@string/settings_order_by_newest_value</item>
+        <item>@string/settings_order_by_relevance_value</item>
     </string-array>
 
-    <string name="settings_publish_date_oldest_value">Oldest</string>
-    <string name="settings_publish_date_newest_value">Newest</string>
 </resources>

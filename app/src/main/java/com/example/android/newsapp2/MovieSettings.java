@@ -23,11 +23,11 @@ public class MovieSettings extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             addPreferencesFromResource(R.xml.movie_settings);
 
-            Preference articleSection = findPreference(getString(R.string.section_name_key));
-            bindPreferenceSummaryToValue(articleSection);
+            Preference pageSize = findPreference(getString(R.string.settings_page_size_key));
+            bindPreferenceSummaryToValue(pageSize);
 
-            Preference articleDate = findPreference(getString(R.string.article_date_key));
-            bindPreferenceSummaryToValue(articleDate);
+            Preference orderBy = findPreference(getString(R.string.settings_order_by_key));
+            bindPreferenceSummaryToValue(orderBy);
         }
 
         @Override
