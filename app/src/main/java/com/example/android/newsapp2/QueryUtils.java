@@ -130,7 +130,8 @@ public final class QueryUtils {
 
                 String url = currentMovie.getString("webUrl");
                 
-                String author = ""; if (currentMovie.has("tags")) {
+                String author = ""; 
+                if (currentMovie.has("tags")) {
                     JSONArray tagsArray = currentMovie.getJSONArray("tags");
 
                     if (tagsArray.length() == 1) {
