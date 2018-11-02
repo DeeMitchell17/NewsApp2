@@ -23,7 +23,7 @@
 
         <activity
             android:name=".MovieSettings"
-            android:label="@string/title">
+            android:label="@string/settings_title">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.android.newsapp2.MovieActivity"/>
