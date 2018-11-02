@@ -101,8 +101,7 @@ public class MovieActivity extends AppCompatActivity
         Uri baseUri = Uri.parse(GUARDIAN_URL);
 
         Uri.Builder uriBuilder = baseUri.buildUpon();
-        
-        uriBuilder.appendQueryParameter("show-fields", "byline");
+       
         uriBuilder.appendQueryParameter("order-by", orderBy);
         uriBuilder.appendQueryParameter("page-size", pageSize);
         uriBuilder.appendQueryParameter("q", "netflix originals");
