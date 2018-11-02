@@ -26,7 +26,7 @@ public class MovieActivity extends AppCompatActivity
 
     public static final String LOG_TAG = MovieActivity.class.getName();
 
-    private static final String GUARDIAN_URL = "https://content.guardianapis.com/search?";
+    private static final String GUARDIAN_URL = "https://content.guardianapis.com/search?show-fields=byline";
 
     private static final int MOVIE_LOADER_ID = 1;
 
@@ -101,7 +101,8 @@ public class MovieActivity extends AppCompatActivity
         Uri baseUri = Uri.parse(GUARDIAN_URL);
 
         Uri.Builder uriBuilder = baseUri.buildUpon();
-
+        
+        uriBuilder.appendQueryParameter("show-fields", "byline");
         uriBuilder.appendQueryParameter("order-by", orderBy);
         uriBuilder.appendQueryParameter("page-size", pageSize);
         uriBuilder.appendQueryParameter("q", "netflix originals");
