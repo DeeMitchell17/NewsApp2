@@ -19,11 +19,11 @@
 
     <!--Settings Page Size Title-->
 
-    <string name="settings_page_size_label">Page Size</string>
+    <string name="settings_page_size_label">Articles</string>
 
     <string name="settings_page_size_key" translatable="false">page-size</string>
 
-    <string name="settings_page_size_default" translatable="false">0</string>
+    <string name="settings_page_size_default" translatable="false">10</string>
 
     <!-- Strings For Order By Preference-->
     <string name="settings_order_by_label">Order By</string>
